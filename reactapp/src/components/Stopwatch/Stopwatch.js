@@ -23,8 +23,8 @@ function Stopwatch() {
   };
 
   const resetTime = () => {
-    setTime(0);
     setIsRunning(false);
+    setTime(0);
   };
 
   const formattedTime = () => {
@@ -46,7 +46,7 @@ function Stopwatch() {
           Start
         </button>
       )}
-      <button data-testid="reset" onClick={resetTime} disabled={time === 0}>
+      <button data-testid="reset" onClick={resetTime} disabled={time === 0 && !isRunning}>
         Reset
       </button>
     </div>
